@@ -2,8 +2,8 @@ const {query} = require("../connection");
 const express = require("express");
 const router = express.Router();
 
-router.get('/canais', async function (req, res) {
-    let canais = await query(
+router.get('/', async function (req, res) {
+    let playlists = await query(
         "SELECT id as nid, " +
         "nome as title, " +
         "descricao as field_descricao_, " +
@@ -11,19 +11,19 @@ router.get('/canais', async function (req, res) {
         "capa as field_media_image " +
         "FROM `canal`;"
     );
-    res.send(canais);
+    res.send(playlists);
 });
 
-router.get('canal/?:id_canal', async function (req, res) {
-    let canal = await query(
+router.get('playlists/:id_playlist', async function (req, res) {
+    let playlists = await query(
         "SELECT id as nid, " +
         "nome as title, " +
         "descricao as field_descricao_, " +
         "imagem as user_picture," +
         "capa as field_media_image " +
-        "FROM `canal` WHERE id=?;",[req.params.id_canal]
+        "FROM `canal` WHERE id=?;",[req.params.id_playlist]
     );
-    res.send(canal);
+    res.send(playlists);
 });
 
 module.exports = router;

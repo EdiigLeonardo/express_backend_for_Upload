@@ -6,6 +6,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use("/canais", require("./pages/canal.js"));
+app.use("/canal/?:id_canal", require("./pages/canal.js"));
+app.use("/playlists", require("./pages/playlist.js"));
+app.use("/playlist/:id_playlist", require("./pages/playlist.js"));
 
 
 /*app.get('/', function (req, res) {
