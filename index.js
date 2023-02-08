@@ -1,28 +1,30 @@
 const express = require('express');
-const {query} = require("./connection");
+// const {query} = require("./connection");
 const cors = require("cors");
 const app = express();
 
 app.use(express.json());
 app.use(cors());
+app.use("/canais", require("./pages/canal.js"));
 
-app.get('/', function (req, res) {
+
+/*app.get('/', function (req, res) {
     console.log("Recebi um pedido GET");
     res.json({message: "Hello World", query: req.query});
-});
+});*/
 
-app.get('/canal', async function (req, res) {
+/*app.get('/pages', async function (req, res) {
     let canais = await query(
         "SELECT id as nid, " +
         "nome as title, " +
         "descricao as field_descricao_, " +
         "imagem as user_picture," +
         "capa as field_media_image " +
-        "FROM `canal`;"
+        "FROM `pages`;"
     );
     console.log(canais);
     res.json(canais);
-});
+});*/
 
 app.listen(3000, ()=>{
     console.log("Servidor a correr na porta 3000");
