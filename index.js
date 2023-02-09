@@ -7,6 +7,8 @@ app.use(cors());
 app.use("/canal", require("./pages/canal.js"));
 app.use("/playlist", require("./pages/playlist.js"));
 app.use("/tematica", require ("./pages/tematicas.js"));
+app.use("/tematica_sugerida", require ("./others/tematica_sugerida.js"));
+app.use("/tags", require("./others/tags.js"));
 
 
 app.listen(3000, ()=>{
