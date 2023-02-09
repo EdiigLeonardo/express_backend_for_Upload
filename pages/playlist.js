@@ -3,27 +3,14 @@ const express = require("express");
 const router = express.Router();
 
 router.get('/', async function (req, res) {
-    let playlists = await query(
-        "SELECT id as nid, " +
-        "nome as title, " +
-        "descricao as field_descricao_, " +
-        "imagem as user_picture," +
-        "capa as field_media_image " +
-        "FROM `canal`;"
-    );
+    let playlists = await query( "SELECT * FROM PLAYLIST");
     res.send(playlists);
 });
 
-router.get('playlists/:id_playlist', async function (req, res) {
-    let playlists = await query(
-        "SELECT id as nid, " +
-        "nome as title, " +
-        "descricao as field_descricao_, " +
-        "imagem as user_picture," +
-        "capa as field_media_image " +
-        "FROM `canal` WHERE id=?;",[req.params.id_playlist]
+router.get('/:id_playlist', async function (req, res) {
+        playlist = await query("SELECT * FROM PLAYLIST_VIDEO WHERE PLAYLIST = ?",[req.params.id_playlist]
     );
-    res.send(playlists);
+    res.send(playlist);
 });
 
 module.exports = router;
