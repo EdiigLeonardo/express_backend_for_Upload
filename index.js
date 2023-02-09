@@ -1,12 +1,11 @@
 const express = require('express');
+// const {query} = require("./connection");
 const cors = require("cors");
 const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use("/canal", require("./pages/canal.js"));
-app.use("/playlist", require("./pages/playlist.js"));
-
+app.use("/canais", require("./pages/canal.js"));
 
 
 /*app.get('/', function (req, res) {
