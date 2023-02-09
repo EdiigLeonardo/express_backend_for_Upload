@@ -6,7 +6,7 @@ app.use(express.json());
 app.use(cors());
 app.use("/canal", require("./pages/canal.js"));
 app.use("/playlist", require("./pages/playlist.js"));
-
+app.use("/tematica", require ("./pages/tematicas.js"));
 
 
 app.listen(3000, ()=>{
