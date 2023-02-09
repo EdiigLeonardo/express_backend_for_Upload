@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get('/', async function (req, res) {
     const playlists = await query( "SELECT * FROM PLAYLIST");
-    res.send(playlists);
+    res.json(playlists);
 });
 
 router.get('/:id_playlist', async function (req, res) {
@@ -15,7 +15,7 @@ router.get('/:id_playlist', async function (req, res) {
         INNER JOIN video ON video.slug = playlist_video.video
         WHERE playlist_video.playlist = ?`,[req.params.id_playlist]
     );
-    res.send(playlist);
+    res.json(playlist);
 });
 
 module.exports = router;
