@@ -10,7 +10,7 @@ app.use("/tematica", require ("./pages/tematicas.js"));
 app.use("/video", require ("./pages/videos.js"));
 //app.use("/tag", require ("./pages/tags.js"));
 app.use("/comentarios_do_video", require("./pages/comentarios_do_video.js"));
-app.use("/comentarios_do_canal", require("./pages/comentarios_do_video.js"));
+app.use("/comentarios_do_canal", require("./pages/comentarios_do_canal.js"));
 app.use("/tematica_sugerida", require ("./others/tematica_sugerida.js"));
 app.use("/tags", require("./others/tags.js"));
 

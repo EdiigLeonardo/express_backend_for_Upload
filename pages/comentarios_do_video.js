@@ -4,7 +4,7 @@ const router = express.Router();
 const moment = require('moment');
 
 router.get('/:id_video', async function (req, res) {
-    const comentarios = await query("SELECT c.nome, c.email, c.comentario, c.canal " +
+    const comentarios = await query("SELECT c.nome, c.email, c.comentario, c.video " +
         "FROM comentario c INNER JOIN video v ON c.video = v.id WHERE v.id =?", [req.params.id_video]);
     res.json(comentarios);
 });
