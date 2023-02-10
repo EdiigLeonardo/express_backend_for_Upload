@@ -13,7 +13,6 @@ app.use("/comentarios_do_video", require("./pages/comentarios_do_video.js"));
 app.use("/comentarios_do_canal", require("./pages/comentarios_do_canal.js"));
 app.use("/tematica_sugerida", require ("./others/tematica_sugerida.js"));
 app.use("/tags", require("./others/tags.js"));
-app.use("/tags", require("./others/tags.js"));
 app.use("/reacao", require("./others/reacao.js"));
 
 app.listen(3000, ()=>{
